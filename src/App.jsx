@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header"
 import Home from "./components/Home/Home"
 import Footer from "./components/Footer/Footer"
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Link, Routes, Route, Outlet } from "react-router-dom"
 import Body from "./components/Home/Body"
 import Image from "./components/Home/Image"
 import Form from "./components/Form"
@@ -18,6 +18,10 @@ import Home2 from "./components/Home2"
 import About2 from "./components/About2"
 import Setting2 from "./components/Setting2"
 import Profile2 from "./components/Profile2"
+import Account from "./components/Account"
+import Footer2 from "./components/Footer2"
+import Layout from "./components/Layout"
+
 
 function App() {
 
@@ -57,19 +61,18 @@ function App() {
 
 
         </Hide>
+        
 
-        <div className="w-screen min-h-screen bg-white">
-          <Header1></Header1>
-        </div>
-        hello ghost
-      
 
       <Routes>
-        <Route path="/" element={<Home2></Home2>}></Route>
-        <Route path="/about" element={<About2></About2>}></Route>
-        <Route path="/setting" element={<Setting2></Setting2>}></Route>
-        <Route path="/profile" element={<Profile2></Profile2>}></Route>
-        <Route path="*" element={<h2>404 Page Not Found</h2>} />
+        <Route path="/" element={<Layout></Layout>}>
+          <Route index element={<Home2 />}></Route>
+          <Route path="/about" element={<About2/>}></Route>
+          <Route path="/setting" element={<Setting2/>}></Route>
+          <Route path="/profile" element={<Profile2/>}></Route>
+          <Route path="/account" element={<Account/>}></Route>
+        </Route>
+        <Route path="*" element={<h2 className="text-3xl text-[red] font-serif text-center font-bold">404 Page Not Found</h2>} />
       </Routes>
 
       </BrowserRouter>

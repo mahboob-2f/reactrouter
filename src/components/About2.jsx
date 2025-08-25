@@ -1,7 +1,7 @@
 export default function About2(){
     return(
-        <div>
-            
+        <div className="min-h-[70vh] bg-[lightgray] flex justify-center items-center text-5xl font-bold font-serif">
+            this is About page
         </div>
     )
 }
